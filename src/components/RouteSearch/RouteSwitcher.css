@@ -1,0 +1,10 @@
+.route-switcher {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+.route-switcher > img {
+  cursor: pointer;
+}

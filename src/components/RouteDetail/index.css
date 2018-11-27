@@ -1,0 +1,172 @@
+.route-detail {
+  position: absolute;
+  bottom: -97vh;
+  left: 1%;
+  width: 98%;
+  height: 250px;
+  z-index: 10;
+  background-image: linear-gradient(to top, rgba(255, 255, 255), rgba(255, 255, 255));
+  /* background-image: linear-gradient(to top,
+   rgb(255, 255, 255),
+   rgba(255, 255, 255, .3),
+   rgba(255, 255, 255, .2),
+   rgba(255, 255, 255, .2),
+   rgba(255, 255, 255, .1),
+   rgba(255, 255, 255, .1),
+   rgba(255, 255, 255, .1)
+   ); */
+  border-radius: 3px;
+  border: solid 1px rgba(189, 189, 189, 0.4);
+  box-shadow: -1px 2px 16px rgba(216, 216, 216, 0.7);
+  display: flex;
+  animation: fadeIn .5s ease;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.hide {
+  opacity: 0;
+  animation: fadeOut .5s ease;
+  pointer-events: none;
+}
+
+.incident-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 200px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.incident-time-aggregate-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 580px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.incident-count-label {
+  position: absolute;
+  top: 105px;
+  font-size: 12px;
+}
+
+.incident-count {
+  position: absolute;
+  top: 122px;
+  font-size: 22px;
+}
+
+.incident-categories {
+  width: 180px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.category-count {
+  border: solid 1px rgba(255, 255, 255);
+  padding: 5px 5px;
+  margin-top: 25px;
+  text-align: center;
+  border-radius: 3px;
+  color: #ffffff;
+  width: 180px;
+  height: 20px;
+  line-height: 20px;
+}
+
+.route-health-scoring {
+  width: 220px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 40px;
+}
+
+.score-div {
+  font-family: inherit;
+  font-size: 110px;
+  text-align: center;
+  padding-top: 2%;
+  letter-spacing: -5px;
+}
+
+.health-score-label {
+  font-size: 13px;
+  margin-top: 30px;
+}
+
+.good {
+  color: rgb(63, 235, 114);
+}
+
+.ok {
+  color: rgb(228, 187, 6);
+}
+
+.bad {
+  color: rgb(243, 52, 4);
+}
+
+.average-div {
+  margin-top: 3px;
+  font-size: 12px;
+}
+
+.detail {
+  font-family: inherit;
+  font-size: 13px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .incident-chart {
+    padding-left: 0px;
+    padding-right: 20px;
+  }
+
+  .incident-categories {
+    padding-left: 0px;
+    padding-right: 10px;
+  }
+
+  .incident-time-aggregate-chart {
+    padding-left: 20px;
+    padding-right: 0px;
+  }
+
+  .route-health-scoring {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    bottom: -100vh;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

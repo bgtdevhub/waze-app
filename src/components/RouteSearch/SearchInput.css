@@ -1,0 +1,29 @@
+.search-input {
+  width: 300px;
+  background-color: transparent;
+  border: solid 1px transparent;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  line-height: 1.7;
+  font-size: 15px;
+  font-family: inherit;
+  letter-spacing: 0.2px;
+  color: #6e6e6e;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(185, 185, 185, 0.801);
+  opacity: 1; /* Firefox */
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: -0.2px;
+}
+
+.underline {
+  border-top: solid 1px rgba(236, 236, 236, 0.568);;
+  margin-top: -10px;
+}
