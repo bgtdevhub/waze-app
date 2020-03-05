@@ -221,7 +221,7 @@ class RouteSearch extends Component {
       const [FeatureSet] = await esriLoader.loadModules(["esri/tasks/support/FeatureSet"]);
 
       const routeTask = new RouteTask({
-        url: "https://utility.arcgis.com/usrsvcs/appservices/sjbENeq4sbjlyTYt/rest/services/World/Route/NAServer/Route_World/solve"
+        url: "https://utility.arcgis.com/usrsvcs/appservices/jbQvbw7pEjtGXgT7/rest/services/World/Route/NAServer/Route_World/solve"
       });
 
       // Setup the route parameters
