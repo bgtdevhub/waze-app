@@ -82,7 +82,7 @@ class RouteSearch extends Component {
       });
 
       // To populate start and destination search
-      window.mapViews[this.props.mapViewId].view.on('click', async (event) => {
+      window.mapViews[this.props.mapViewId].view.on('click', (event) => {
         if (this.state.vm.activeSource) {
 
           this.setState({
@@ -110,34 +110,39 @@ class RouteSearch extends Component {
           }
 
           const geocoder = this.state.vm.activeSource.locator;
+          console.log(geocoder)
 
-          const response = await geocoder.locationToAddress(event.mapPoint);
+          geocoder.locationToAddress({
+            location: event.mapPoint
+          })
+            .then(response => {
+              const address = response.attributes.LongLabel;
 
-          const address = response.attributes.LongLabel;
-
-          if (this.state.isStartSearchType) {
-            this.setState({
-              startingSearchTerm: address,
-              startingPoint: {
-                longitude: response.location.longitude,
-                latitude: response.location.latitude
-              },
-              isStartSearchType: !this.state.isStartSearchType
+              if (this.state.isStartSearchType) {
+                this.setState({
+                  startingSearchTerm: address,
+                  startingPoint: {
+                    longitude: response.location.longitude,
+                    latitude: response.location.latitude
+                  },
+                  isStartSearchType: !this.state.isStartSearchType
+                })
+              } else {
+                this.setState({
+                  destinationSearchTerm: address,
+                  destinationPoint: {
+                    longitude: response.location.longitude,
+                    latitude: response.location.latitude
+                  },
+                  isStartSearchType: !this.state.isStartSearchType
+                })
+              }
+    
+              this.placeStartFinishMarker();
+    
+              this.getRoute();
             })
-          } else {
-            this.setState({
-              destinationSearchTerm: address,
-              destinationPoint: {
-                longitude: response.location.longitude,
-                latitude: response.location.latitude
-              },
-              isStartSearchType: !this.state.isStartSearchType
-            })
-          }
-
-          this.placeStartFinishMarker();
-
-          this.getRoute();
+          .catch(console.error)
         }
       });
 
