@@ -110,7 +110,6 @@ class RouteSearch extends Component {
           }
 
           const geocoder = this.state.vm.activeSource.locator;
-          console.log(geocoder)
 
           geocoder.locationToAddress({
             location: event.mapPoint
