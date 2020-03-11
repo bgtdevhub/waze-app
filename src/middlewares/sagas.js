@@ -144,7 +144,7 @@ const queryWazeByGeometry = function* (action = {}) {
           fields,
           renderer
         });
-
+        featureLayer.outFields = ["*"];
         action.view.map.add(featureLayer);
       }
 
