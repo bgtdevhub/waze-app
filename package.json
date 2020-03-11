@@ -2,6 +2,7 @@
   "name": "waze-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/WazeJS",
   "dependencies": {
     "chart.js": "^2.7.3",
     "esri-loader": "^2.5.0",
